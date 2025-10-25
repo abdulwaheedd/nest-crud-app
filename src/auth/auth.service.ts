@@ -96,6 +96,14 @@ export class AuthService {
       throw new UnauthorizedException('Invalid refresh token');
     }
   }
+  async getUserById(userId: number) {
+    const user = await this.userRepo.findOne({ where: { id: userId } });
+    if (!user) {
+      throw new UnauthorizedException('User not found');
+    }
+    const { password, ...result } = user;
+    return result;
+  }
   private async hashPassword(password: string): Promise<string> {
     return await bcrypt.hash(password, 10);
   }
