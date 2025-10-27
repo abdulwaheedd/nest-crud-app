@@ -6,7 +6,6 @@ import { JwtAuthGuard } from './guards/jwt.guard';
 import { currentUser } from './decorators/current-user.decorator';
 import { Roles } from './decorators/roles.decorator';
 import { UserRole } from './entities/user.entity';
-import { use } from 'passport';
 import { RolesGuard } from './guards/roles.guard';
 
 @Controller('auth')
