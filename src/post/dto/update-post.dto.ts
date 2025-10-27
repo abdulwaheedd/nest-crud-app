@@ -20,10 +20,4 @@ export class UpdatePostDto {
   @MinLength(10, { message: 'Content must be at least 10 characters long' })
   @MaxLength(5000, { message: 'Content must be at most 5000 characters long' })
   content?: string;
-  @IsOptional()
-  @IsNotEmpty({ message: 'Author should not be empty' })
-  @IsString({ message: 'Author must be a string' })
-  @MinLength(3, { message: 'Author must be at least 3 characters long' })
-  @MaxLength(50, { message: 'Author must be at most 50 characters long' })
-  author?: string;
 }
